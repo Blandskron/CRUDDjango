@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Item List</title>
+</head>
+<body>
+    <h1>Item List</h1>
+    <a href="{% url 'item_new' %}">Add New Item</a>
+    <ul>
+        {% for item in items %}
+            <li>{{ item.name }} - {{ item.description }}</li>
+            <a href="{% url 'item_edit' item.pk %}">Edit</a> |
+            <a href="{% url 'item_delete' item.pk %}">Delete</a>
+        {% endfor %}
+    </ul>
+</body>
+</html>
