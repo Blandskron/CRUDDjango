@@ -2,16 +2,24 @@
 <html>
 <head>
     <title>Usuario List</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
-    <h1>Usuario List</h1>
-    <a href="{% url 'usuarios_new' %}">Add New Usuario</a>
-    <ul>
+<body class="container mt-5">
+    <h1 class="mb-4">Usuario List</h1>
+    <a href="{% url 'usuarios_new' %}" class="btn btn-primary mb-3">Add New Usuario</a>
+    <ul class="list-group">
         {% for usuario in usuarios %}
-            <li>{{ usuario.nombre }} - {{ usuario.apellido }} - {{ usuario.edad }}</li>
-            <a href="{% url 'usuarios_edit' usuario.pk %}">Edit</a> |
-            <a href="{% url 'usuarios_delete' usuario.pk %}">Delete</a>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <span>{{ usuario.nombre }} - {{ usuario.apellido }} - {{ usuario.edad }}</span>
+                <span>
+                    <a href="{% url 'usuarios_edit' usuario.pk %}" class="btn btn-sm btn-warning">Edit</a>
+                    <a href="{% url 'usuarios_delete' usuario.pk %}" class="btn btn-sm btn-danger">Delete</a>
+                </span>
+            </li>
         {% endfor %}
     </ul>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </body>
 </html>

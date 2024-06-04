@@ -2,14 +2,18 @@
 <html>
 <head>
     <title>Delete Usuario</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
-    <h1>Delete Usuario</h1>
-    <p>Are you sure you want to delete "{{ usuario.nombre }}"?</p>
+<body class="container mt-5">
+    <h1 class="mb-4">Delete Usuario</h1>
+    <p class="alert alert-warning">Are you sure you want to delete "{{ usuario.nombre }}"?</p>
     <form method="post">
         {% csrf_token %}
-        <button type="submit">Yes, delete</button>
+        <button type="submit" class="btn btn-danger">Yes, delete</button>
+        <a href="{% url 'usuarios_list' %}" class="btn btn-secondary">Cancel</a>
     </form>
-    <a href="{% url 'usuarios_list' %}">Cancel</a>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </body>
 </html>
