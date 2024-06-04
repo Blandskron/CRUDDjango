@@ -10,9 +10,10 @@ git commit -m "cree mi rama"
 git push origin developer/blandskron
 
 # Colaboradores
-Bastian
+# Ramas
+Bastian = developer/blandskron
 1
-Sebastian
+Sebastian = developer/sbecerra
 2
-Aquiles
+Aquiles = developer/ainostroza
 
