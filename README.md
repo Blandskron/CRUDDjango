@@ -11,5 +11,8 @@ git push origin developer/blandskron
 
 # Colaboradores
 Bastian
-
+1
 Sebastian
+2
+Aquiles
+
