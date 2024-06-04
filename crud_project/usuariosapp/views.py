@@ -34,14 +34,6 @@ def usuarios_update(request, pk):
 # DELETE
 def usuarios_delete(request, pk):
     usuario = Usuarios.objects.get(pk=pk)
-# DELETE
-def item_delete(request, pk):
-    item = Item.objects.get(pk=pk)
-    if request.method == 'POST':
-        item.delete()
-        return redirect('item_list')
-    return render(request, 'crud_app/item_confirm_delete.html', {'item': item})
-
     if request.method == 'POST':
         usuario.delete()
         return redirect('usuarios_list')
